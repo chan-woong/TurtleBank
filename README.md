@@ -3,7 +3,7 @@
 **SK 루키즈 18기 모의 해킹**
 
 <details>
-<summary>## 팀 멤버</summary>
+<summary>팀 멤버</summary>
 
 - **팀장**: 라현근
 - 구한을
@@ -19,14 +19,14 @@
 </details>
 
 <details>
-<summary>## AWS 클라우드 구성도</summary>
+<summary>AWS 클라우드 구성도</summary>
+![클라우드](https://github.com/user-attachments/assets/342e5031-b444-4816-8d38-f68171a08b31)
 
-![AWS 클라우드 구성도](image.png)
 
 </details>
 
 <details>
-<summary>## 취약점</summary>
+<summary>취약점</summary>
 
 ### WAB (웹 애플리케이션)
 - 중요한 정보를 평문으로 전송
@@ -73,10 +73,10 @@
 </details>
 
 <details>
-<summary>## 시나리오</summary>
+<summary>시나리오</summary>
 
 ### 시나리오 1
-![시나리오 1](<Untitled (2).png>)
+![Untitled (2)](https://github.com/user-attachments/assets/77d163ae-250e-48b1-8c63-ed0d1ebf5272)
 
 **악성 프로그램 및 변경된 앱 배포를 통한 금전 탈취**
 - **수수료 송금 로직이 변경된 앱 배포**:
@@ -88,13 +88,13 @@
   - 사용자가 보안 프로그램으로 위장한 RAT 파일을 설치하고, 공격자는 원격으로 사용자의 PC에 접근하여 키로깅, 웹캠 도청, 민감 정보 접근, 랜섬웨어 바이러스 감염 등 다양한 공격을 통해 금전을 탈취합니다.
 
 ### 시나리오 2
-![시나리오 2](<Untitled (1).png>)
+![Untitled (1)](https://github.com/user-attachments/assets/5e508cac-4a4e-4c78-9698-d29e3dd6fd1b)
 
 **마이 데이터를 이용하여 다른 은행에서 금전 탈취**
 - 자동 스크립트를 이용하여 다른 은행과 거래하는 모든 계좌의 자금을 공격자의 계좌로 이체합니다.
 
 ### 시나리오 3
-![시나리오 3](image-1.png)
+![시나리오3](https://github.com/user-attachments/assets/baf0c4bf-df5a-45c8-b5da-0363e922e81b)
 
 **메타데이터 취약점을 이용한 AWS 공격**
 - **메타데이터 취약점을 이용한 EC2 생성 및 코인 채굴**:
@@ -109,7 +109,7 @@
 </details>
 
 <details>
-<summary>## 오픈 소스 출처</summary>
+<summary>오픈 소스 출처</summary>
 
 - [Damn-Vulnerable-Bank (V1)](https://github.com/rewanthtammana/Damn-Vulnerable-Bank)
 - [OhBank Online (V2)](https://ohbank.online/)
