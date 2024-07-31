@@ -21,7 +21,7 @@
 <details>
 <summary>AWS 클라우드 구성도</summary>
 ![cloud](https://github.com/user-attachments/assets/27b7c079-1e6c-40aa-a63c-8fd15de6b316)
-
+![cloud](https://github.com/user-attachments/assets/e7f2b02f-12cf-432c-8acd-08a6755c3d98)
 </details>
 
 <details>
