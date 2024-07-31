@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
     let resStatus = "";
     let resMessage = "";
     const coolsms = require('coolsms-node-sdk').default;
-    const messageService = new coolsms('NCS2ULU0PYWR4DU8', 'LHQVWAJRESNTB8W9SBRJM5LBEIOZPI2D');
+    const messageService = new coolsms('', '');
     const auth_num = generateRandomVerificationCode();
     const auth_num_str = auth_num.toString(); 
 
@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
                 messageService.sendOne(          // 인증번호 전송
                     {
                         to: phone,
-                        from: '01099622086',
+                        from: '',
                         text: "[인증번호] : " + auth_num_str + "를 입력해주세요."
                 }
                 ).then(res => console.log(res))
