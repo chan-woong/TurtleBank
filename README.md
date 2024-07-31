@@ -1,20 +1,20 @@
 # TurtleBank
 
-**SK 루키즈 18기 모의 해킹**
-
+**SK 루키즈 18기 모의 해킹**  
+프로젝트 기간  : 24-06-22 ~ 24-08-08
 <details>
 <summary>팀 멤버</summary>
 
-- **팀장**: 라현근
-- 구한을
-- 김도현 1
-- 김도현 2
-- 김태윤
-- 박찬웅
-- 윤수용
-- 이민선
-- 이지민
-- 조민성
+- **팀장**: [라현근] (https://github.com/radir429)
+- [구한을] (https://github.com/han-eul) 
+- [김도현 1] (https://github.com/ehgus0117)
+- [김도현 2] (https://github.com/chichimon12)
+- [김태윤] (https://github.com/kty2541)
+- [박찬웅] (https://github.com/chanwoong)
+- [윤수용] (https://github.com/YSY986)
+- [이민선] (https://github.com/minseon)
+- [이지민] (https://github.com/Jiiiiimin)
+- [조민성] (https://github.com/casablanca44)
 </details>
 
 <details>
@@ -25,7 +25,11 @@
 
 <details>
 <summary>취약점</summary>
-
+  
+### 진단기준
+ - 2024 핀테크서비스 취약점 점검 안내(오픈뱅킹)     
+ - https://fintech.fsec.or.kr/
+  
 ### WAB (웹 애플리케이션)
 - 중요한 정보를 평문으로 전송
 - 입력 정보 보호 조치 적용
