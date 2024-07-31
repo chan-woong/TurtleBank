@@ -1,0 +1,3 @@
+C:/Users/Administrator/Desktop/sk/FinalProject/ShieldBank-master/APP-ShieldBank/app/.cxx/Debug/4y4j6a5e/x86_64/CMakeFiles/frida-check.dir
+C:/Users/Administrator/Desktop/sk/FinalProject/ShieldBank-master/APP-ShieldBank/app/.cxx/Debug/4y4j6a5e/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/Administrator/Desktop/sk/FinalProject/ShieldBank-master/APP-ShieldBank/app/.cxx/Debug/4y4j6a5e/x86_64/CMakeFiles/rebuild_cache.dir

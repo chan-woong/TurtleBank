@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shadow"
+    android:backgroundTint="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".SendMoney">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="?android:attr/homeAsUpIndicator" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="110dp"
+        app:srcCompat="@drawable/person" />
+
+
+    <TextView
+        android:id="@+id/actid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_gravity="center"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actid"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:hint="돈을 송금할 계좌를 입력해주세요"
+        android:inputType="numberDecimal"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edact2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actid"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:hint="돈을 입금할 계좌를 입력해주세요"
+        android:inputType="numberDecimal"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edamt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edact"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:hint="금액을 입력해주세요"
+        android:inputType="numberDecimal"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/accountPW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edamt"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:hint="계좌 비밀번호를 입력해주세요"
+        android:inputType="textPassword"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/sendbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/accountPW"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:onClick="Biometrics"
+        style="@style/AppButton"
+        android:text="이체 하기"
+        android:textStyle="bold"
+        tools:ignore="OnClick" />
+</LinearLayout>

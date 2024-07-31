@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="yellow">#EAC13B</color>
+    <color name="black">#000000</color>
+    <color name="blue">#399ee5</color>
+    <color name="kuchbhiblue">#21DFF4</color>
+    <color name="white">#fff</color>
+    <color name="lightblue">#b3e5fc</color>
+    <color name="deepblue">#3359cc</color>
+    <color name="lightpurple">#522F92</color>
+
+    <color name='bg_pink'>#FFD6D6</color>
+    <color name='btn_main'>#FF9494</color>
+    <color name='gray'>#808080</color>
+
+    <color name='silver'>#A5A5A5</color>
+    <color name='gold'>#D6CE25</color>
+    <color name='platinum'>#54ECAA</color>
+
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="user">#3964e5</color>
+    <color name="user2">#4070ff</color>
+    <color name="user3">#3981e5</color>
+    <color name="user4">#EDE7F6</color>
+    <color name="genel">#3359cc</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--colors for profile-->
+    <color name="profilePrimaryDark">#FF3B30</color>
+    <color name="profileAccentColor">#F7F7F7</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="profileBackground">#fff</color>
+    <color name="blackTextColor">#000</color>
+    <color name="profileEditTextColor">#707070</color>
+</resources>

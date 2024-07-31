@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!-- 첫 번째 LinearLayout -->
+    <LinearLayout
+        android:id="@+id/firstLinearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginStart="4dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/secondLinearLayout"
+        android:layout_marginEnd="4dp">
+
+        <!-- 첫 번째 LinearLayout 내부에 있는 이미지뷰 -->
+        <ImageView
+            android:id="@+id/bank_account_ImageView"
+            android:layout_width="51dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/icon_save_money" />
+
+        <!-- 첫 번째 LinearLayout 내부에 있는 두 번째 LinearLayout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- 첫 번째 LinearLayout 내부의 두 번째 LinearLayout 내부에 있는 두 개의 LinearLayout -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 첫 번째 TextView -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="잔액"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <!-- 두 번째 TextView -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="계좌번호"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <!-- 세 번째 TextView -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="뱅크"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 첫 번째 LinearLayout 내부의 두 번째 LinearLayout 내부에 있는 두 개의 LinearLayout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!-- 첫 번째 TextView -->
+                <TextView
+                    android:id="@+id/text_view_bank_account_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="100000"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <!-- 두 번째 TextView -->
+                <TextView
+                    android:id="@+id/text_view_bank_account_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="98887"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <!-- 세 번째 TextView -->
+                <TextView
+                    android:id="@+id/text_view_bank_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="555"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 두 번째 LinearLayout -->
+    <LinearLayout
+        android:id="@+id/secondLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/firstLinearLayout"
+        app:layout_constraintTop_toTopOf="@id/firstLinearLayout">
+
+        <!-- 두 번째 LinearLayout 내부에 추가할 내용을 정의할 수 있습니다 -->
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/icon_money_transfer" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEND"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

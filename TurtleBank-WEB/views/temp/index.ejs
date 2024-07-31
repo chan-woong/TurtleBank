@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("common/header") %>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2 hero-img">
+                <%- include("common/ad") %>
+            </div>
+        </div>
+        <% if(select2 == "info"){ %>
+            <div class="text"><b>안녕하세요.</b><div style="font-size: 30px">한끗차이의<br/>TURTLE BANK입니다!!</div>
+            <a href="/watchVideo?url=https://github.com/BreakTheShield/Bank-WEB/blob/master/README.md" class="mybtn"><span>한끗차이 소개</span></a></div>
+        <% }else{ %>
+            <div class="text">가입만 해도 최대 1백만원 대출!! 지금 당장 가입하세요
+                <!--            <a href="/bank/authorization?username=admin&account_number=999999&balance=10000&rest=48.184&is_admin=true&url=http://127.0.0.1:3000/api/auth/authorization" class="btn-watch-video"><i-->
+                <!--                        class="bi bi-arrow-right-circle"></i><span>대출 상품 보기</span></a>-->
+            </div>
+        <% } %>
+        <div class="container d-flex align-items-center">
+            <nav style="flex-shrink:1.1;" id="navbar" class="navbar">
+                <ul class="myUl">
+                    <!--                    제3 금융권 26등-->
+                    <li>
+                        <form id="iframe" action="/" method="post">
+                            <input type="hidden" name="src" value="http://127.0.0.1:3001/img/info.png"/>
+                            <input type="hidden" name="select2" value="info"/>
+                            <% if(select2 == "info"){ %>
+                                <a class="nav-link scrollto active" style="color: #00f;"
+                                   onclick="document.getElementById('iframe').submit();">소개</a>
+                            <% }else{ %>
+                                <a class="nav-link scrollto" style="color: #6e6e6d;"
+                                   onclick="document.getElementById('iframe').submit(); active">소개</a>
+                            <% } %>
+                        </form>
+                    </li>
+                    <li>
+                        <form id="iframe2" action="/" method="post">
+                            <input type="hidden" name="src" value="http://127.0.0.1:3001/img/loan.jpeg"/>
+                            <input type="hidden" name="select2" value="loan"/>
+                            <% if(select2 == "loan"){ %>
+                                <a class="nav-link scrollto active" style="color: #00f;"
+                                   onclick="document.getElementById('iframe2').submit();">대출 상품</a>
+                            <% }else{ %>
+                                <a class="nav-link scrollto" style="color:#6e6e6d"
+                                   onclick="document.getElementById('iframe2').submit(); active">대출 상품</a>
+                            <% } %>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</section><!-- End Hero -->
+<main id="main">
+
+    <!-- ======= Cliens Section ======= -->
+    <!-- End Cliens Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>공지사항</h2>
+            </div>
+            <div class="row content">
+
+                <ul>
+                    <%
+                    for(var i = 0; i < results.length; i++)
+                    {
+                        var data = results[i];
+                    %>
+
+                    <li class="thing">
+                        <i class="bx bx-message-detail icon-msg"></i>
+                        <h4><a href="/notice/getBoard?id=<%= data.id %>"><%= data.title %></a></h4>
+                    </li>
+
+                    <% } %>
+                </ul>
+            </div>
+
+        </div>
+    </section><!-- End About Us Section -->
+
+
+</main><!-- End #main -->
+
+
+<%- include("common/footer") %>
+
+</html>

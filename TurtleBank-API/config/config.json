@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "root",
+    "password": "gozld13!#",
+    "database": "dvba",
+    "host": "db-turtle-1.c0uzydxzrqji.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql",
+    "board_database": "board"
+  }
+}

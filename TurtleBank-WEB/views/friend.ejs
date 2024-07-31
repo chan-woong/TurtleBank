@@ -1,0 +1,13 @@
+<%- include("banking/common/header") %>
+<h1>친구 목록</h1>
+
+<form method="post">
+    <input type="id" name="beneficiary_account_number" placeholder="친구 계좌 입력">
+    <button type="submit" name="add">추가</button>
+
+</form>
+
+<div id="tbl">
+    <%- html %>
+</div>
+<%- include("banking/common/footer") %>

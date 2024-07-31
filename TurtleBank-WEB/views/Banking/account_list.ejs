@@ -1,0 +1,61 @@
+<%- include("common/header") %>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-danger">계좌목록</h4>
+        <form action="/bank/account_list/create" method="post">
+            <button class="btn btn-user  float-right" type="submit"  id="createAccount" value="submit" style="background-color:#00f !important; color:white !important;">신규 계좌 생성</button>
+        </form>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>계좌 번호</th>
+                        <th>잔액</th>   
+                        <th>은행코드</th>
+                        <!-- 원하는 다른 열 추가 가능 -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (html_data && html_data.length > 0) { %>
+                        <% html_data.forEach(account => { %>
+                            <%
+                            if(account.bank_code == 333){
+                                var bank_code = "RABBITBANK";
+                            }
+                            else{
+                                var bank_code = "TURTLEBANK";
+                            }
+                            if(account.bank_code == 333){
+                                var bank_code = "RABBITBANK";
+                            }
+                            else{
+                                var bank_code = "TURTLEBANK";
+                            }
+                            %>        
+                            <tr>
+                                <td><%= account.account_number %></td>
+                                <td><%= account.balance %></td>
+                                <td><%= bank_code %></td>
+                                <!-- 원하는 다른 열 데이터 추가 가능 -->
+                            </tr>
+                        <% }); %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="3">계좌가 없습니다.</td>
+                        </tr>
+                    <% } %>
+                    <%- html %>
+                </tbody>
+            </table>
+            <%- html %>
+        </div>
+    </div>
+
+<%- include("common/footer") %>
+
+
+                    
+                

@@ -1,0 +1,13 @@
+<!-- cardview_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <gradient
+        android:angle="45"
+        android:startColor="#ffffcc"
+        android:endColor="#ffffcc"
+        android:type="linear" />
+
+    <corners android:radius="12dp" />
+
+</shape>

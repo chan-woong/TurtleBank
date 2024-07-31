@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("common/header") %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li>Login</li>
+            </ol>
+            <h2 style="color:#00f">Login</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page contact">
+        <div class="container">
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex justify-content-center" style="margin:0 auto;">
+                <form role="form" class="php-email-form">
+
+                    <div class="form-group">
+                        <label for="name">ID</label>
+                        <input type="text" class="form-control" name="username" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">PASSWORD</label>
+                        <input type="password" class="form-control" name="password" id="password" required>
+                    </div>
+                    <!-- <div class="my-3">
+                      <div class="loading">Loading</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div> -->
+
+                    <div style="text-align:center; width:100%; display:inline-block;">
+                        <button style="width: 40%;" type="submit" formmethod="post" formaction="/user/login">LOGIN
+                        </button> &emsp;&emsp;&emsp;
+                        <a style="width: 40%;" onclick="location.href='/user/signup'" class="mybtn">SIGN UP</a>
+                    </div>
+                </form>
+                
+            </div>
+            <div style="text-align: center; padding: 20px;">
+                <a href="/user/findPass" style="text-decoration: underline; color:blue;" >Forgot your PASSWORD?</a>
+            </div>
+        </div>
+
+    </section>
+
+</main><!-- End #main -->
+
+
+<%- include("common/footer") %>
+
+</html>

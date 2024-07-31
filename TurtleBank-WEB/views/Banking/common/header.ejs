@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TURTLEBANK</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
+    <style>
+        /* 이거 토글 화살표 삭제 하는 스타일ㅎㅎ */
+        a#userDropdown.dropdown-toggle::after {
+            display: none;
+        }
+
+        a#userDropdown.dropdown-toggle {
+            padding-right: 0;
+        }
+
+        .dropdown-menu {
+        left: auto;
+        right: 0;
+    }
+    </style>
+
+    <!-- script -->
+    <script>
+        $(document).ready(function(){
+            // 드롭다운 메뉴를 토글합니다.
+            $('.dropdown-toggle').on('click', function(e){
+                if (!$(this).next().hasClass('show')) {
+                    $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+                }
+                var $subMenu = $(this).next('.dropdown-menu');
+                $subMenu.toggleClass('show');
+                $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e){
+                    $('.dropdown-submenu .show').removeClass('show');
+                });
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- 사이드바 -->
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- 맨왼쪽 맨위 -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <img src ="/img/lock-icon.png" width="40" height="40">
+            </div>
+            <div class="sidebar-brand-text mx-3">TURTLEBANK</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- 맨왼쪽 맨위버튼 -->
+        <li class="nav-item active">
+            <a class="nav-link" href="/">
+                <i class="fas fa-home"></i>
+                <span>HOME</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- 관리자 -->
+        <% if(pending.data.is_admin){ %>
+            <div class="sidebar-heading">
+                관리자 페이지
+            </div>
+
+            <!-- Nav Item - Charts -->
+            <% if(select === "membership"){ %>
+            <li class="nav-item active">
+                <% }else{ %>
+            <li class="nav-item" onclick="active">
+                <% } %>
+                <a class="nav-link" href="/bank/membership">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>멤버십 권한 변경</span></a>
+            </li>
+        <% } %>
+        <!-- 송금기능 구분선 -->
+        <div class="sidebar-heading">
+            송금기능
+        </div>
+
+        <!-- Nav Item - Charts -->
+        <% if(select === "list"){ %>
+        <li class="nav-item active">
+            <% }else{ %>
+        <li class="nav-item" onclick="active">
+            <% } %>
+
+            <a class="nav-link" href="/bank/list">
+
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>입출금내역</span></a>
+        </li>
+
+        <!-- Nav Item - Tables -->
+
+        <% if(select === "send"){ %>
+        <li class="nav-item active">
+            <% }else{ %>
+        <li class="nav-item" onclick="active">
+            <% } %>
+
+            <a class="nav-link" href="/bank/send">
+
+                <i class="fas fa-fw fa-won-sign"></i>
+                <span>송금하기</span></a>
+        </li>
+
+        <% if(select === "account_list"){ %>
+            <li class="nav-item active">
+                <% }else{ %>
+            <li class="nav-item" onclick="active">
+                <% } %>
+    
+                <a class="nav-link" href="/bank/account_list">
+    
+                    <i class="fas fa-fw fa-male"></i>
+                    <span>계좌 목록</span></a>
+            </li>
+
+        
+
+
+    <% if(select === "loan"){ %>
+        <li class="nav-item active">
+            <% }else{ %>
+        <li class="nav-item" onclick="active">
+            <% } %>
+
+            <a class="nav-link" href="/bank/loan">
+
+                <i class="fas fa-fw fa-money-bill-wave"></i>
+                <span>대출</span></a>
+        </li>
+
+        <!--
+        <% if(select === "coinShop"){ %>
+        <li class="nav-item active">
+            <% }else{ %>
+        <li class="nav-item" onclick="active">
+            <% } %>
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-address-card"></i>
+
+                <span>코인샵</span></a>
+        </li> -->
+
+        <% if(!(pending.data.is_admin)){ %>
+            <!-- Nav Item - Charts -->
+            <% if(select === "membership"){ %>
+            <li class="nav-item active">
+                <% }else{ %>
+            <li class="nav-item" onclick="active">
+                <% } %>
+                <a class="nav-link" href="/bank/membership">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>멤버십</span></a>
+            </li>
+        <% } %>
+
+        <% if(select == "mydata"){ %>
+            <li class="nav-item active">
+                <% }else{ %>
+            <li class="nav-item" onclick="active">
+                <% } %>
+
+                <% if (pending.data.is_mydata == 1) { %>
+                    <a class="nav-link" href="/bank/mydata_info">
+                        <i class="fas fa-fw fa-address-card"></i>
+                        <span>마이데이터</span>
+                    </a>
+                <% } else if (pending.data.is_mydata == 0) { %>
+                    <a class="nav-link" href="/bank/mydata_info">
+                        <i class="fas fa-fw fa-address-card"></i>
+                        <span>마이데이터</span>
+                    </a>
+                <% } %>
+                
+            </li> 
+
+            <!-- 중요함 -->
+            <!-- <% if(select === "mydata"){ %>
+                <li class="nav-item active">
+                    <% }else{ %>
+                <li class="nav-item" onclick="active">
+                    <% } %>
+                    <a class="nav-link" href="/bank/mydata_auth">
+                        <i class="fas fa-fw fa-address-card"></i>
+        
+                        <span>마이데이터</span></a>
+                </li>  -->
+
+            <!-- 접기버튼 -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+
+    </ul>
+    <!-- 사이드바 끝 -->
+
+    <!-- 가운데 시작 -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+                    <i class="fa fa-bars text-danger"></i>
+                </button>
+
+                <!-- 툴바 검색창 -->
+                <!-- <form
+                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                            aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form> -->
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <!-- Dropdown - Messages -->
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                             aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto w-100 navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small"
+                                           placeholder="Search for..." aria-label="Search"
+                                           aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+
+                    <!-- Nav Item - Alerts -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="/notice/viewBoard" id="alertsDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <span class="mr-2 d-none d-lg-inline text-gray-600 small">Notice</span>
+                            <!-- Counter - Alerts -->
+                            <span class="badge badge-danger badge-counter"></span>
+                        </a>
+                        <!-- Dropdown - Alerts -->
+                        
+                    </li>
+
+                    <!-- Nav Item - Messages -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="/qna/viewBoard" id="messagesDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <span class="mr-2 d-none d-lg-inline text-gray-600 small">QnA</span>
+                           <!-- Counter - Messages -->
+                            <span class="badge badge-danger badge-counter"></span>
+                        </a>
+                        <!-- Dropdown - Messages -->
+                        
+                    </li>
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="display: flex; align-items: center;">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" style="margin-top: 20px; margin-right: 30px;"><%= pending.data.username %></span>
+                                <img class="img-profile rounded-circle" src="../img/undraw_profile.svg" style="margin-right: 40px; max-width: 30px; max-height: 30px; margin-top: 20px;">
+                            </a>
+                            
+                            <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="/user/logout">로그아웃</a></li>
+                                <li><a class="dropdown-item" href="../user/changePass">비밀번호 변경</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                        <!-- Dropdown - User Information --> 
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+
+                            
+                            <a class="dropdown-item" href="/user/logout" data-toggle="modal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </nav>
+            <!-- 툴바 끝 -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-2">
+                    <h1 class="h5 mb-0 font-weight-bold text-gray-800">마이페이지</h1>
+                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+                </div>
+
+                <!-- Content Row -->
+                <div class="row">
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-danger shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                            계좌번호           <!--대표계좌번호(user에 있는 account)--> 
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><%= pending.data.account_number %></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 대출 유무 없어지면 살릴 것. -->
+                    <!-- Earnings (Monthly) Card Example -->
+                     <!-- <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            대출유무
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"> -->
+                                            <!-- ₩ <%= pending.data.balance %></div>  자산을 account_list에서 뽑아와서 더해주는 것. -->
+                                    <!-- </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-won-sign fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            거래 한도
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            <%= pending.data.rest %></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            대출
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                             <%= pending.data.is_loan %></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-won-sign fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pending Requests Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            계좌 총액
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">₩ <%= pending.data.total_balance %></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-won-sign fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

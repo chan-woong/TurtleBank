@@ -1,0 +1,102 @@
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>TURTLEBANK</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="/css/mypopup.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Arsha - v4.3.0
+    * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+        <a href="/" class="logo me-auto"><img src="/img/logo.png" alt="" class="img-fluid"></a>
+
+        <nav id="navbar" class="navbar">
+
+            <ul>
+                <li>
+                    <% if(select === "home"){ %>
+                        <a class="nav-link scrollto active" href="/">Home</a>
+                    <% }else{ %>
+                        <a class="nav-link scrollto" onclick="active" href="/">Home</a>
+                    <% } %>
+                </li>
+                <li>
+                    <% if(select === "notice"){ %>
+                        <a class="nav-link scrollto active" href="/notice/viewBoard">Notice</a>
+                    <% }else{ %>
+                        <a class="nav-link scrollto" onclick="active" href="/notice/viewBoard">Notice</a>
+                    <% } %>
+                </li>
+                <li>
+                    <% if(select === "qna"){ %>
+                        <a class="nav-link scrollto active" href="/qna/viewBoard">QnA</a>
+                    <% }else{ %>
+                        <a class="nav-link scrollto" onclick="active" href="/qna/viewBoard">QnA</a>
+                    <% } %>
+                </li>
+
+
+                <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
+
+                <% if(locals.u_data){ %>
+                    <li><a class="nav-link   scrollto" href="/bank/list">Banking</a></li>
+                    <li class="dropdown"><a href="#"><span><%= u_data %></span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+
+                            <li><a href="./user/changePass">비밀번호 변경</a></li>
+                            <div class="dropdown-divider"></div>
+                            <li><a href="/user/logout">로그아웃</a></li>
+                            <!-- <li><a href="#">Drop Down 4</a></li> -->
+                        </ul>
+                    </li>
+                <% } else { %>
+                <li>
+                    <% if(select === "login"){ %>
+                        <a class="getstarted scrollto" style="color: #6e6c6a;!important;
+                            background: #f3f5fa;!important;" href="/user/login">Login</a>
+                    <% }else{ %>
+                        <a class="getstarted scrollto" href="/user/login">Login</a>
+                    <% } %>
+                </li>
+
+                <% } %>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->

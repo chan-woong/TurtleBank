@@ -1,0 +1,36 @@
+<%- include("common/header") %>
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h4 class="m-0 font-weight-bold text-danger">송금하기</h4>
+        </div>
+        <div class="card-body">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">송금</h1>
+            </div>
+            <form id="otherbank_send" class="otherbank_send" action="/bank/otherbank_send/post" method="POST"
+                name="otherbank_send">
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+
+
+                        <%- html %>
+
+
+                    </div>
+                </div>
+
+
+                <a onclick="document.getElementById('otherbank_send').submit()" class="btn btn-user btn-block"
+                    id="submitbutton" style="background-color:#00f !important; color:white !important;">
+                    송금
+                </a>
+                <hr>
+            </form>
+            <hr>
+        </div>
+    </div>
+
+
+    <%- include("common/footer") %>

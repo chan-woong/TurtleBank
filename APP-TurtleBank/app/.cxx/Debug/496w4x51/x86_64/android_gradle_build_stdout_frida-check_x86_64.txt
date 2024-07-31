@@ -1,0 +1,2 @@
+ninja: Entering directory `D:\FinalProject\src\ShieldBank-master\APP-ShieldBank\app\.cxx\Debug\496w4x51\x86_64'
+ninja: no work to do.

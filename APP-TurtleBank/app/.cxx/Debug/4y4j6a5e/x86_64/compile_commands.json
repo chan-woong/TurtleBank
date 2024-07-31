@@ -1,0 +1,7 @@
+[
+{
+  "directory": "C:/Users/Administrator/Desktop/sk/FinalProject/ShieldBank-master/APP-ShieldBank/app/.cxx/Debug/4y4j6a5e/x86_64",
+  "command": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dfrida_check_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC -o CMakeFiles\\frida-check.dir\\src\\main\\jni\\frida-check.c.o -c C:\\Users\\Administrator\\Desktop\\sk\\FinalProject\\ShieldBank-master\\APP-ShieldBank\\app\\src\\main\\jni\\frida-check.c",
+  "file": "C:/Users/Administrator/Desktop/sk/FinalProject/ShieldBank-master/APP-ShieldBank/app/src/main/jni/frida-check.c"
+}
+]

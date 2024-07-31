@@ -1,0 +1,133 @@
+<%- include("common/header") %>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-danger">송금하기</h4>
+    </div>
+    <div class="card-body">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">송금</h1>
+        </div>
+        <form id="send" class="send" action="/bank/send/post" method="POST" name="send">
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+
+                    <%- html %>
+
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" name="amount" placeholder="보낼 금액">
+                </div>
+            </div>
+            <input type="hidden" id="ceiling" name="ceiling" value="망한값" />
+            <input type="hidden" id="accountPW" name="accountPW" value="" /> <!-- Hidden input to store accountPW -->
+            <a onclick="openPrompt()" class="btn btn-user btn-block" id="submitbutton" style="background-color:#00f !important; color:white !important;">
+                송금
+            </a>
+        </form>
+        <hr>
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <label for="maskedPW">이체 비밀번호</label>
+        <input type="password" id="maskedPW" class="masked-input">
+        <button class="button" onclick="submitPassword()">Submit</button>
+    </div>
+</div>
+
+<!-- Include common footer -->
+<%- include("common/footer") %>
+
+<!-- Styles for the modal -->
+<style>
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+.hidden-input {
+    display: none;
+}
+.masked-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.button {
+    padding: 10px 20px;
+    background-color: #00f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.button:hover {
+    background-color: #00f;
+}
+</style>
+
+<!-- JavaScript for the modal and password submission -->
+<script>
+function openPrompt() {
+    document.getElementById('myModal').style.display = 'block';
+}
+
+function submitPassword() {
+    var accountPW = document.getElementById('maskedPW').value;
+    if (accountPW) {
+        document.getElementById('accountPW').value = accountPW;
+        check_Recipient();
+    } else {
+        alert("Transfer password is required to proceed.");
+    }
+    document.getElementById('myModal').style.display = 'none';
+}
+
+function check_Recipient(){
+    const to_account = document.getElementById('to_account').value;///bank/check_account // /bank/send/check
+    fetch('/bank/send/check?to='+to_account, {
+    method: 'GET',
+    credentials: 'include'
+    })
+    .then(response => {
+        if (!response.ok) {
+            alert("입력하신 계좌는 존재하지 않습니다.");
+        };
+        return response.json(); // 응답을 JSON으로 파싱
+    })
+    .then(data => {
+        var check = confirm("받는 분 성함은 : "+ data.username + " 입니다.\n 맞으면 확인 아니면 취소를 눌러주세요.");
+        if(check){
+            document.getElementById('send').submit();
+        }else{
+            alert("송금이 취소되었습니다.")
+        }
+    })
+    
+    // document.getElementById('send').submit();
+}
+
+</script>

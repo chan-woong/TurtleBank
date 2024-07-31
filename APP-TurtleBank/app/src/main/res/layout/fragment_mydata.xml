@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 첫 번째 카드뷰 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 첫 번째 칸에 들어갈 내용 -->
+            <TextView
+                android:id="@+id/text_view_portfolio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="000님,\n흩어져있는 내 자산 연결하고\n한번에 관리하세요" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:text="Mydata 기능은 한번에 여러 계좌의 자산들을 손쉽게 정리할 수 있는 서비스 입니다." />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- 두 번째 카드뷰 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 두 번째 칸에 들어갈 내용 -->
+            <TextView
+                android:id="@+id/text_view_credit_cards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="추천 금융기관" />
+
+            <TextView
+                android:id="@+id/recyclerview_credit_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="º 국X뱅크\nº 우X뱅크\nº 기X뱅크\nº 농X뱅크" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="º 래빗뱅크\n"
+                android:textColor="@color/deepblue"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:autoSizeMaxTextSize="20sp"
+                 />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+    <Button
+        android:id="@+id/mydata_sms_auth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="마이데이터 인증 요청하기"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        style="@style/AppButton"
+        android:textSize="18sp"
+        android:padding="14dp"
+        android:stateListAnimator="@null" />
+    </LinearLayout>
+
+
+</LinearLayout>

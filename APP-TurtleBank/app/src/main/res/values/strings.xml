@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TurtleBank</string>
+    <string name="welcome">Welcome to TurtleBank</string>
+    <string name="home">Home</string>
+    <string name="all_account">전체계좌</string>
+    <string name="loan">대출상품</string>
+    <string name="transaction">거래내역</string>
+    <string name="mydata">마이데이터</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="bank_options">
+        <item>TurtleBank</item>
+        <item>RabbitBank</item>
+    </string-array>
+</resources>

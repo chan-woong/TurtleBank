@@ -1,0 +1,25 @@
+<%- include("common/header") %>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-danger">수취인 등록</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <form action="/bank/user_register" method="post" id="register">
+                <div class="form-group">
+                    <input type="number" class="form-control form-control-user" name="beneficiary_account_number"
+                           placeholder="수취인 계좌를 입력하세요.">
+                    <br><a href="#" onclick="document.getElementById('register').submit();"
+                           class="btn btn-user btn-block" style="background-color:#00f !important; color:white !important;">등록 신청</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("common/footer") %>
+
+
+                    
+                

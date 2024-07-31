@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.zxing:core:3.3.2" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.google.zxing" artifactId="core" version="3.3.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.3.2/f47e3fc99fb2755b8a354d60efa021a0b88f4180/core-3.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

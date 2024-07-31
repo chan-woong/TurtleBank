@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../common/header") %>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="identified">
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>QnA작성</h2>
+                <p>질문을 작성하세요</p>
+            </div>
+
+            <div class="row">
+
+                <div class="mt-5 mt-lg-0 d-flex align-items-stretch">
+                    <form action="/qna/writeBoard/write" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="name">제목 입력</label>
+                                <input type="text" name="title" class="form-control" id="title" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">본문</label>
+                            <textarea class="form-control" name="contents" rows="10" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit">등록</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="text-center">
+                <form action="/qna/viewBoard" method="get" class="php-email-form2">
+                    <button type="submit">목록으로</button>
+                </form>
+            </div>
+        </div>
+</div>
+</section><!-- End Contact Section -->
+</body>
+<%- include("../common/footer") %>
+</html>

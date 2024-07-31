@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/toolbar_mypage"
+        android:enabled="true"
+        android:title="마이페이지"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/toolbar_logout"
+        android:enabled="true"
+        android:title="로그아웃"
+        app:showAsAction="always"/>
+
+
+</menu>

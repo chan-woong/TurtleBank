@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "C:\\Users\\Administrator\\Desktop\\sk\\FinalProject\\ShieldBank-master\\APP-ShieldBank\\app\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\Administrator\\Desktop\\sk\\FinalProject\\ShieldBank-master\\APP-ShieldBank\\app\\.cxx\\Debug\\4y4j6a5e\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\Administrator\\Desktop\\sk\\FinalProject\\ShieldBank-master\\APP-ShieldBank\\app\\.cxx\\Debug\\4y4j6a5e\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "frida-check::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "frida-check",
+      "output": "C:\\Users\\Administrator\\Desktop\\sk\\FinalProject\\ShieldBank-master\\APP-ShieldBank\\app\\build\\intermediates\\cxx\\Debug\\4y4j6a5e\\obj\\x86\\libfrida-check.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}

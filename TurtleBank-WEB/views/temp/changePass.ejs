@@ -1,0 +1,54 @@
+<%- include("common/header") %>
+
+<script>
+    window.onload = function () {
+        <% if(locals.message){ %>
+        alert("<%= message %>")
+        <% } %>
+    }
+</script>
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li>비밀번호 변경</li>
+            </ol>
+            <h2>비밀번호 변경</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page contact">
+        <div class="container">
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex justify-content-center" style="margin:0 auto;">
+                <form method="post" role="form" class="php-email-form">
+
+                    <div class="form-group">
+                        <label for="name">현재 비밀번호</label>
+                        <input type="password" class="form-control" name="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">새로운 비밀번호</label>
+                        <input type="password" class="form-control" name="new_password" id="new_password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">새로운 비밀번호 확인</label>
+                        <input type="password" class="form-control" name="confirm_password" id="confirm_password" required>
+                    </div>
+                    <!-- <div class="my-3">
+                      <div class="loading">Loading</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div> -->
+                    <div class="text-center">
+                        <button type="submit">비밀번호 변경</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

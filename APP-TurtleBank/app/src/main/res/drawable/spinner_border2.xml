@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="@android:color/transparent" /> <!-- 배경색 지정 -->
+                    <stroke
+                        android:width="1.3dp"
+                        android:color="#CCCCCC" />
+                    <corners android:radius="5dp" /> <!-- 모서리 둥글기 -->
+                </shape>
+            </item>
+            <item
+                android:drawable="@drawable/ic_down"
+                android:gravity="center|end"
+                android:right="5dp"
+                android:width="13dp"
+                android:height="13dp" />
+
+        </layer-list>
+    </item>
+</selector>
