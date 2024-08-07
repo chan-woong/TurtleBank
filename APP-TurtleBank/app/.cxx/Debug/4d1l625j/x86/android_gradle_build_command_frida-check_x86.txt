@@ -1,0 +1,7 @@
+Executable : C:\Users\r2com\AppData\Local\Android\Sdk\cmake\3.18.1\bin\ninja.exe
+arguments : 
+-C
+D:\AWS-TurtleBank\TurtleBank\APP-TurtleBank\app\.cxx\Debug\4d1l625j\x86
+frida-check
+jvmArgs : 
+

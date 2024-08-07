@@ -1,0 +1,3 @@
+D:/AWS-TurtleBank/TurtleBank/APP-TurtleBank/app/.cxx/Debug/4d1l625j/armeabi-v7a/CMakeFiles/frida-check.dir
+D:/AWS-TurtleBank/TurtleBank/APP-TurtleBank/app/.cxx/Debug/4d1l625j/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/AWS-TurtleBank/TurtleBank/APP-TurtleBank/app/.cxx/Debug/4d1l625j/armeabi-v7a/CMakeFiles/rebuild_cache.dir

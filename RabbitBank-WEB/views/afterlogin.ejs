@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 쿠키를 이용한 방법
+    <% if(locals.data) { %>
+    var en_data = "<%= data %>";
+    document.cookie = "Token=" + en_data + ";path=/; max-age=3600";
+    location.href = "/";
+    <% }else{ %>
+    alert("로그인에 실패하였습니다.");
+    location.href = "/user/login";
+    <% } %>
+</script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

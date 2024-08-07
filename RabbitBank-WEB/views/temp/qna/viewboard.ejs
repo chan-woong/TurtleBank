@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<%- include("../common/header") %>
+
+<body>
+<div id="identified">
+    <div postion="absolute" top="50px">
+        <title>Notice Board</title>
+        <main id="main">
+            <section id="faq" class="faq section-bg">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="section-title">
+                        <h2>QnA</h2>
+                        <p>QnA가 등록됩니다</p>
+                    </div>
+
+                    <div class="faq-list">
+                        <ul>
+
+                            <%
+                            for(var i = 0; i < results.length; i++)
+                            {
+                                var data = results[i];
+                            %>
+
+                            <li data-aos="fade-up" data-aos-delay="100">
+                                <i class="bx bx-message-detail icon-msg"></i> <a data-bs-toggle="collapse"
+                                                                                 class="collapse"
+                                                                                 data-bs-target="#faq-list-1"><a
+                                            href="/qna/getBoard?id=<%= data.id %>"><%= data.title %></a><i
+                                            class="bx bx-chevron-down icon-show"></i></a>
+                                <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                                    <p><b>
+                                            글번호:</b>
+                                        <%= data.id %>
+                                    </p>
+                                    <p><b>
+                                            최종수정시간:</b>
+                                        <%= data.updatedAt %>
+                                    </p>
+                                </div>
+                            </li>
+                            <% } %>
+
+                        </ul>
+                        <a href="/qna/writeBoard" id="forsubmit">글쓰기</a>
+                    </div>
+                </div>
+
+            </section><!-- End Frequently Asked Questions Section -->
+        </main><!-- End #main -->
+
+</body>
+</div>
+</div>
+<%- include("../common/footer") %>
+</html>

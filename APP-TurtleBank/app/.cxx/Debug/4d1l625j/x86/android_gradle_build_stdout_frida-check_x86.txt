@@ -1,0 +1,7 @@
+ninja: Entering directory `D:\AWS-TurtleBank\TurtleBank\APP-TurtleBank\app\.cxx\Debug\4d1l625j\x86'
+[1/2] Building C object CMakeFiles/frida-check.dir/src/main/jni/frida-check.c.o
+../../../../src/main/jni/frida-check.c:32:9: warning: implicit declaration of function 'inet_pton' is invalid in C99 [-Wimplicit-function-declaration]
+        if(inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr)<=0)
+           ^
+1 warning generated.
+[2/2] Linking C shared library ..\..\..\..\build\intermediates\cxx\Debug\4d1l625j\obj\x86\libfrida-check.so

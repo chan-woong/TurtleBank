@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../common/header") %>
+<% var data = results[0]; %>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div id="identified">
+    <section id="about" class="about section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2><%= data.title %></h2>
+            </div>
+
+            <div class="row content">
+                <div class="pad">
+                    <div id="bgbg">
+                        <h4>
+                            <b>
+                                글 정보
+                            </b>
+                        </h4>
+                        <ul>
+                            <li><i class="ri-check-double-line"></i>글번호: <%= data.id %> </li>
+                            <li><i class="ri-check-double-line"></i>작성일: <%= data.createdAt %></li>
+                            <li><i class="ri-check-double-line"></i>수정일: <%= data.updatedAt %></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pad">
+                    <div id="bgbg">
+                        <div id="bgbgbg">
+                            <b>내용</b>
+                        </div>
+                        <p>
+                            <%- data.content %>
+                        </p>
+                        <div id="bgbgbg">
+                            <b>답변</b>
+                        </div>
+                        <p>
+                            <%- data.comment %>
+                        </p>
+                        <div class="col-lg-6 pt-4 pt-lg-20">
+                            <div id="buttonflex">
+                                <a href="/qna/editBoard?id=<%= data.id %>" class="btn-learn-more">수정하기</a>
+                                <a href="/qna/addComment?id=<%= data.id %>" class="btn-learn-more">댓글추가하기</a>
+                                <a href="/qna/deleteBoard?id=<%= data.id %>" class="btn-learn-more">삭제하기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</div>
+</div>
+</section><!-- End About Us Section -->
+</body>
+<%- include("../common/footer") %>
+</html>
+

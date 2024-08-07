@@ -1,0 +1,48 @@
+<%- include("common/header") %>
+
+<script>
+    window.onload = function () {
+        <% if(locals.message){ %>
+        alert("<%= message %>")
+        <% } %>
+    }
+</script>
+
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li>비밀번호 찾기</li>
+            </ol>
+            <h2>비밀번호 찾기</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page contact">
+        <div class="container">
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex justify-content-center" style="margin:0 auto;">
+                <form method="post" action="/user/findPass" role="form" class="php-email-form">
+
+                    <div class="form-group">
+                        <label for="name">ID</label>
+                        <input type="text" class="form-control" name="username" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">전화번호</label>
+                        <input type="tel" class="form-control" name="phone" pattern="[0-9]{3}[0-9]{4}[0-9]{4}" id="phone" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit">문자 인증</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+
+<%- include("common/footer") %>

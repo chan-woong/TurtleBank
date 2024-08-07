@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<% var data = results[0]; %>
+<head>
+    <%- include("../common/header") %>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<main id="main">
+    <div id="identified">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+
+                <h2>공지사항</h2>
+
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
+                    <div class="col-lg-4">
+                        <div class="portfolio-info">
+                            <h3> 공지사항 </h3>
+                            <ul>
+                                <li><strong>글번호</strong>: <%= data.id %></li>
+                                <li><strong>아이디</strong>: <%= data.userId %></li>
+                                <li><strong>최초입력일</strong>: <%= data.createdAt %></li>
+                                <li><strong>최초수정일</strong>: <%= data.updatedAt %></li>
+                            </ul>
+                        </div>
+                        <div class="portfolio-info">
+                            <h2> <%- data.title %> </h2>
+                            <p>
+                                <%- data.content %>
+                            </p>
+                        </div>
+                        <div class="portfolio-info">
+                            <a href="/notice/editBoard?id=<%= data.id %>">수정하기</a>
+                            <a href="/notice/deleteBoard?id=<%= data.id %>">삭제하기</a>
+                        </div>
+                        <% if(path !== "null"){ %>
+                        <div class="portfolio-info">
+                            <a href="/notice/download?url=<%= path %>" class="btn btn-secondary btn-user btn-block">
+                                Download
+                            </a>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section><!-- End Portfolio Details Section -->
+</main><!-- End #main -->
+</body>
+<%- include("../common/footer") %>
+</html>

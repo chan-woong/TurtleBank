@@ -1,0 +1,108 @@
+<%- include("common/header") %>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-danger">송금하기</h4>
+    </div>
+    <div class="card-body">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">송금</h1>
+        </div>
+        <form id="send" class="send" action="/bank/send/post" method="POST" name="send">
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+
+                    <%- html %>
+
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" name="amount" placeholder="금액">
+                </div>
+            </div>
+            <input type="hidden" id="ceiling" name="ceiling" value="망한값" />
+            <input type="hidden" id="accountPW" name="accountPW" value="" /> <!-- Hidden input to store accountPW -->
+            <a onclick="openPrompt()" class="btn btn-user btn-block" id="submitbutton" style="background-color:#ff0000 !important; color:white !important;">
+                송금
+            </a>
+        </form>
+        <hr>
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <label for="maskedPW">Please enter your account transfer password:</label>
+        <input type="password" id="maskedPW" class="masked-input">
+        <button class="button" onclick="submitPassword()">Submit</button>
+    </div>
+</div>
+
+<!-- Include common footer -->
+<%- include("common/footer") %>
+
+<!-- Styles for the modal -->
+<style>
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+.hidden-input {
+    display: none;
+}
+.masked-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.button:hover {
+    background-color: #ff0000;
+}
+</style>
+
+<!-- JavaScript for the modal and password submission -->
+<script>
+function openPrompt() {
+    document.getElementById('myModal').style.display = 'block';
+}
+
+function submitPassword() {
+    var accountPW = document.getElementById('maskedPW').value;
+    if (accountPW) {
+        document.getElementById('accountPW').value = accountPW;
+        document.getElementById('send').submit();
+    } else {
+        alert("Transfer password is required to proceed.");
+    }
+    document.getElementById('myModal').style.display = 'none';
+}
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("common/header") %>
+
+<script>
+    window.onload = function () {
+        <% if(locals.message){ %>
+        alert("<%= message %>")
+        <% } %>
+    }
+
+    function maxLengthCheck(object){
+    if (object.value.length > object.maxLength){
+      object.value = object.value.slice(0, object.maxLength);
+    }    
+  }
+</script>
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+</style>
+
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li>비밀번호 찾기</li>
+            </ol>
+            <h2>사용자 인증</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page contact">
+        <div class="container">
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex justify-content-center" style="margin:0 auto;">
+                <form method="post" action="/user/smsAuth" role="form" class="php-email-form">
+                    <script>
+                        // 현재 페이지의 URL에서 쿼리 매개변수를 추출합니다.
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const username = urlParams.get('username');
+                    
+                        // 추출한 username 값을 HTML 폼 필드에 할당합니다.
+                        document.getElementById('username').value = username || '';
+                    </script>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="username" id="username" value="<%= username || '' %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">인증번호</label>
+                        <input type="number" class="form-control" name="authnum" id="authnum" maxlength="4" oninput="maxLengthCheck(this)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">새로운 비밀번호</label>
+                        <input type="password" class="form-control" name="next_new_password" id="next_new_password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">비밀번호 확인</label>
+                        <input type="password" class="form-control" name="check_password" id="check_password" required>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-center">
+                            &emsp;&emsp;&emsp; <button style="width: 40%;" type="submit">변경</button> &emsp;&emsp;&emsp;
+                        </div>
+                    </form>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+
+<%- include("common/footer") %>
+
+</html>
