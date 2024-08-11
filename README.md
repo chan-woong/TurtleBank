@@ -12,7 +12,7 @@
 - [김태윤] (https://github.com/kty2541)
 - [박찬웅] (https://github.com/chanwoong)
 - [윤수용] (https://github.com/YSY986)
-- [이민선] (https://github.com/minseon)
+- [이민선] (https://github.com/meondung)
 - [이지민] (https://github.com/Jiiiiimin)
 - [조민성] (https://github.com/casablanca44)
 </details>
